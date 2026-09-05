@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <OfficeApp
   xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -12,9 +12,9 @@
   <DefaultLocale>fr-FR</DefaultLocale>
   <DisplayName DefaultValue="Ailis"/>
   <Description DefaultValue="Bouton Ailis dans le ruban Outlook."/>
-  <IconUrl DefaultValue="https://BASE_URL/assets/icon-64.png"/>
-  <HighResolutionIconUrl DefaultValue="https://BASE_URL/assets/icon-128.png"/>
-  <SupportUrl DefaultValue="https://BASE_URL/"/>
+  <IconUrl DefaultValue="https://nthome-create.github.io/ailis-outlook-bravo/assets/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://nthome-create.github.io/ailis-outlook-bravo/assets/icon-128.png"/>
+  <SupportUrl DefaultValue="https://nthome-create.github.io/ailis-outlook-bravo/"/>
 
   <Hosts>
     <Host Name="Mailbox"/>
@@ -29,7 +29,7 @@
   <FormSettings>
     <Form xsi:type="ItemRead">
       <DesktopSettings>
-        <SourceLocation DefaultValue="https://BASE_URL/dialog.html"/>
+        <SourceLocation DefaultValue="https://nthome-create.github.io/ailis-outlook-bravo/dialog.html"/>
         <RequestedHeight>250</RequestedHeight>
       </DesktopSettings>
     </Form>
@@ -111,12 +111,12 @@
 
       <Resources>
         <bt:Images>
-          <bt:Image id="icon16" DefaultValue="https://BASE_URL/assets/icon-16.png"/>
-          <bt:Image id="icon32" DefaultValue="https://BASE_URL/assets/icon-32.png"/>
-          <bt:Image id="icon80" DefaultValue="https://BASE_URL/assets/icon-80.png"/>
+          <bt:Image id="icon16" DefaultValue="https://nthome-create.github.io/ailis-outlook-bravo/assets/icon-16.png"/>
+          <bt:Image id="icon32" DefaultValue="https://nthome-create.github.io/ailis-outlook-bravo/assets/icon-32.png"/>
+          <bt:Image id="icon80" DefaultValue="https://nthome-create.github.io/ailis-outlook-bravo/assets/icon-80.png"/>
         </bt:Images>
         <bt:Urls>
-          <bt:Url id="functionFile" DefaultValue="https://BASE_URL/commands.html"/>
+          <bt:Url id="functionFile" DefaultValue="https://nthome-create.github.io/ailis-outlook-bravo/commands.html"/>
         </bt:Urls>
         <bt:ShortStrings>
           <bt:String id="groupLabel" DefaultValue="Ailis"/>
