@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ailis</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <style>
+    :root { color-scheme: light dark; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 18px;
+      font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+      background: #ffffff; color: #111827;
+    }
+    @media (prefers-color-scheme: dark) {
+      body { background: #1f2023; color: #f3f4f6; }
+      button { background: #1f2937; }
+    }
+    img { width: 72px; height: 72px; }
+    h1 {
+      margin: 0; font-size: 30px; font-weight: 600; letter-spacing: -0.01em;
+      background: linear-gradient(90deg, #1D4ED8, #0D9488, #059669);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    button {
+      font: inherit; font-size: 14px; padding: 7px 20px; cursor: pointer;
+      border: 1px solid #9ca3af; border-radius: 6px; background: #f9fafb; color: inherit;
+    }
+    button:hover { border-color: #0D9488; }
+  </style>
+</head>
+<body>
+  <img src="assets/icon-128.png" alt="Ailis" />
+  <h1>Bravo !</h1>
+  <button type="button" id="close">Fermer</button>
+  <script>
+    Office.onReady(function () {
+      document.getElementById("close").addEventListener("click", function () {
+        Office.context.ui.messageParent("close");
+      });
+    });
+  </script>
+</body>
+</html>

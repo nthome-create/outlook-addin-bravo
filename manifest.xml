@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OfficeApp
+  xmlns="http://schemas.microsoft.com/office/appforoffice/1.1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0"
+  xmlns:mailappor="http://schemas.microsoft.com/office/mailappversionoverrides/1.0"
+  xsi:type="MailApp">
+
+  <Id>fd1b4512-d318-49e3-bcae-2507fdb12511</Id>
+  <Version>1.0.0.0</Version>
+  <ProviderName>Ailis</ProviderName>
+  <DefaultLocale>fr-FR</DefaultLocale>
+  <DisplayName DefaultValue="Ailis"/>
+  <Description DefaultValue="Bouton Ailis dans le ruban Outlook."/>
+  <IconUrl DefaultValue="https://BASE_URL/assets/icon-64.png"/>
+  <HighResolutionIconUrl DefaultValue="https://BASE_URL/assets/icon-128.png"/>
+  <SupportUrl DefaultValue="https://BASE_URL/"/>
+
+  <Hosts>
+    <Host Name="Mailbox"/>
+  </Hosts>
+
+  <Requirements>
+    <Sets>
+      <Set Name="Mailbox" MinVersion="1.5"/>
+    </Sets>
+  </Requirements>
+
+  <FormSettings>
+    <Form xsi:type="ItemRead">
+      <DesktopSettings>
+        <SourceLocation DefaultValue="https://BASE_URL/dialog.html"/>
+        <RequestedHeight>250</RequestedHeight>
+      </DesktopSettings>
+    </Form>
+  </FormSettings>
+
+  <Permissions>ReadItem</Permissions>
+
+  <Rule xsi:type="RuleCollection" Mode="Or">
+    <Rule xsi:type="ItemIs" ItemType="Message" FormType="Read"/>
+  </Rule>
+
+  <DisableEntityHighlighting>false</DisableEntityHighlighting>
+
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides" xsi:type="VersionOverridesV1_0">
+    <VersionOverrides xmlns="http://schemas.microsoft.com/office/mailappversionoverrides/1.1" xsi:type="VersionOverridesV1_1">
+
+      <Requirements>
+        <bt:Sets DefaultMinVersion="1.5">
+          <bt:Set Name="Mailbox"/>
+        </bt:Sets>
+      </Requirements>
+
+      <Hosts>
+        <Host xsi:type="MailHost">
+          <DesktopFormFactor>
+            <FunctionFile resid="functionFile"/>
+
+            <!-- Ruban lors de la LECTURE d'un message -->
+            <ExtensionPoint xsi:type="MessageReadCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="ailisGroup">
+                  <Label resid="groupLabel"/>
+                  <Control xsi:type="Button" id="ailisBravoButtonRead">
+                    <Label resid="btnLabel"/>
+                    <Supertip>
+                      <Title resid="btnLabel"/>
+                      <Description resid="btnTip"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="icon16"/>
+                      <bt:Image size="32" resid="icon32"/>
+                      <bt:Image size="80" resid="icon80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>showBravo</FunctionName>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+
+            <!-- Ruban lors de la REDACTION d'un message -->
+            <ExtensionPoint xsi:type="MessageComposeCommandSurface">
+              <OfficeTab id="TabDefault">
+                <Group id="ailisGroupCompose">
+                  <Label resid="groupLabel"/>
+                  <Control xsi:type="Button" id="ailisBravoButtonCompose">
+                    <Label resid="btnLabel"/>
+                    <Supertip>
+                      <Title resid="btnLabel"/>
+                      <Description resid="btnTip"/>
+                    </Supertip>
+                    <Icon>
+                      <bt:Image size="16" resid="icon16"/>
+                      <bt:Image size="32" resid="icon32"/>
+                      <bt:Image size="80" resid="icon80"/>
+                    </Icon>
+                    <Action xsi:type="ExecuteFunction">
+                      <FunctionName>showBravo</FunctionName>
+                    </Action>
+                  </Control>
+                </Group>
+              </OfficeTab>
+            </ExtensionPoint>
+
+          </DesktopFormFactor>
+        </Host>
+      </Hosts>
+
+      <Resources>
+        <bt:Images>
+          <bt:Image id="icon16" DefaultValue="https://BASE_URL/assets/icon-16.png"/>
+          <bt:Image id="icon32" DefaultValue="https://BASE_URL/assets/icon-32.png"/>
+          <bt:Image id="icon80" DefaultValue="https://BASE_URL/assets/icon-80.png"/>
+        </bt:Images>
+        <bt:Urls>
+          <bt:Url id="functionFile" DefaultValue="https://BASE_URL/commands.html"/>
+        </bt:Urls>
+        <bt:ShortStrings>
+          <bt:String id="groupLabel" DefaultValue="Ailis"/>
+          <bt:String id="btnLabel" DefaultValue="Ailis"/>
+        </bt:ShortStrings>
+        <bt:LongStrings>
+          <bt:String id="btnTip" DefaultValue="Afficher le message Ailis."/>
+        </bt:LongStrings>
+      </Resources>
+
+    </VersionOverrides>
+  </VersionOverrides>
+</OfficeApp>
